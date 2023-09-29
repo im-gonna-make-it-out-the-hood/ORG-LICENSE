@@ -1,28 +1,8 @@
-// ==UserScript==
-// @name        blame @split@coolviruses.download for this one - github.com
-// @namespace   Violentmonkey Scripts
-// @match       https://github.com/*/LICENSE*
-// @grant       none
-// @version     1.0
-// @run-at      document-idle
-// @author      -
-// @description 9/28/2023, 8:20:36 PM
-// ==/UserScript==
-let theBox = document.querySelector(".Box-sc-g0xbh4-0 .clRvgz");
-let theOtherBox = document.querySelector(".Box-sc-g0xbh4-0 .kUXbOh");
-let license = null;
+The MIT License (MIT)
+Copyright © 2023 <DISCORDIAN HOOD>
 
-let id = setInterval(() => {
-  if ((theBox === null) | (theOtherBox === null)) {
-    theBox = document.querySelector(".Box-sc-g0xbh4-0 .clRvgz");
-    theOtherBox = document.querySelector(".Box-sc-g0xbh4-0 .kUXbOh");
-  } else {
-    clearInterval(id);
-    license = theBox.children[1].innerHTML;
-    theBox.children[0].innerHTML = "Hi, I'm Saul Goodman.";
-    theBox.children[1].innerHTML = "Did you know that you have rights?";
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-    const previousContent = theOtherBox.innerHTML;
-    theOtherBox.innerHTML = `${license.startsWith("The") ? "" : "The"} <strong>${license}</strong> says you do. ${previousContent}`;
-  }
-}, 100);
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
